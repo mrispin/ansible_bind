@@ -1,0 +1,14 @@
+---
+language: python
+services: docker
+env:
+  global:
+    - ROLE_NAME: bind
+  matrix:
+    - MOLECULE_DISTRO: ubuntu1804
+
+install:
+  - pip install testinfra==3.0.4 molecule docker
+
+script:
+  - molecule test
