@@ -1,9 +1,2 @@
 ---
-# tasks file for bind
-- name: Install bind
-  package:
-    name: "{{ item }}"
-    state: present
-  loop:
-    - bind9
-    - dnsutils
+- include: "package-{{ ansible_os_family }}.yml"
