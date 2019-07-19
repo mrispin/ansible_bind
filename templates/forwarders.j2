@@ -1,0 +1,5 @@
+	forwarders {
+{% for forwarder in bind_forwarders %}
+		{{ forwarder }};
+{% endfor %}
+	};

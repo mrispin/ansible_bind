@@ -7,3 +7,15 @@
     name: bind9
     enabled: yes
     state: started
+  become: yes
+
+- name: Insert forwarders if required
+  when: bind_enable_caching|bool
+  blockinfile:
+    dest: "{{ bind_named_conf_options }}"
+    content: "{{ lookup('template', 'forwarders.j2') }}"
+    state: present
+    marker: "# ANSIBLE FORWARDERS {mark}"
+    insertafter: "options {"
+  become: yes
+  notify: restart_bind

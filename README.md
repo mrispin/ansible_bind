@@ -13,7 +13,18 @@ None
 Role Variables
 --------------
 
-None
+Available variables are listed below, along with default values (see `defaults/main.yml`):
+
+    bind_enable_caching: true
+
+Enable use as a caching server. 
+
+    bind_forwarders:
+      - 8.8.8.8
+      - 8.8.4.4
+
+The servers to resolve requests for domains that this server is not administrative for.
+
 
 Example Playbook
 ----------------

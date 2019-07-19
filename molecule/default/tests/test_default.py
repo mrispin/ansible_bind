@@ -23,3 +23,6 @@ def test_bind_listening(host):
     assert bindtsocket.is_listening
     assert bindusocket.is_listening
 
+def test_bind_forwarding_requests(host):
+    google = host.addr("google.com")
+    assert google.is_resolvable
