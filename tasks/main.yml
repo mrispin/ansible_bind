@@ -1,2 +1,9 @@
 ---
-- include: "package-{{ ansible_os_family }}.yml"
+- name: Include distro specific setup
+  include: "package-{{ ansible_os_family }}.yml"
+
+- name: Set service to start automatically
+  service:
+    name: bind9
+    enabled: yes
+    state: started
