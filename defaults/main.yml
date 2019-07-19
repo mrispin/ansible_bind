@@ -1,2 +1,5 @@
 ---
-# defaults file for bind
+bind_enable_caching: true
+bind_forwarders:
+  - 8.8.8.8
+  - 8.8.4.4

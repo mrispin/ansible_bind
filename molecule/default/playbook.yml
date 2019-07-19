@@ -3,3 +3,7 @@
   hosts: all
   roles:
     - role: ansible_bind
+  tasks:
+    - name: Resolve locally
+      shell: "echo nameserver: 127.0.0.1 >/etc/resolv.conf"
+      changed_when: no        
