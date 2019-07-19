@@ -1,5 +1,6 @@
 ---
 galaxy_info:
+  role_name: bind
   author: Mark Rispin
   description: Installs and manages bind9
 
@@ -30,7 +31,13 @@ galaxy_info:
   platforms:
     - name: Ubuntu
       versions:
+        - trusty
+        - xenial
         - bionic
+    - name: Debian
+      versions:
+        - stretch
+        - buster
 
   galaxy_tags: []
   # List tags for your role here, one per line. A tag is a keyword that describes
