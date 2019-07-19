@@ -1,7 +1,9 @@
 ---
 # tasks file for bind
 - name: Install bind
-  package: "{{ item }}"
+  package:
+    name: "{{ item }}"
+    state: present
   loop:
     - bind9
     - dnsutils
