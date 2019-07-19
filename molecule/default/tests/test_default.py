@@ -15,3 +15,11 @@ def test_bind_service_started(host):
     bindservice = host.service("bind9")
     assert bindservice.is_running
     assert bindservice.is_enabled
+
+
+def test_bind_listening(host):
+    bindtsocket = host.socket("tcp://0.0.0.0:53")
+    bindusocket = host.socket("udp://0.0.0.0:53")
+    assert bindtsocket.is_listening
+    assert bindusocket.is_listening
+
