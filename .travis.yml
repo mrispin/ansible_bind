@@ -5,17 +5,21 @@ env:
   global:
     - ROLE_NAME: bind
   matrix:
+    # Distros
     - MOLECULE_DISTRO: ubuntu1804
     - MOLECULE_DISTRO: ubuntu1604
     - MOLECULE_DISTRO: ubuntu1404
     - MOLECULE_DISTRO: debian10
     - MOLECULE_DISTRO: debian9
+    # Scenarios
+    - MOLECULE_SCENARIO: default
+    - MOLECULE_SCENARIO: primarymaster
 
 install:
   - pip install testinfra==3.0.4 molecule docker
 
 script:
-  - molecule test
+  - molecule test --scenario $MOLECULE_SCENARIO
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/?branch=master
