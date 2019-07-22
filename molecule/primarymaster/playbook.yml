@@ -10,6 +10,20 @@
         zone_retry: 7200
         zone_expire: 864000
         zone_ttl: 86400
+        zone_minttl: 46000
+        records:
+          - name: servera
+            ip: 127.2.2.5
+            type: A
+          - name: serverb 
+            ip: 127.4.2.5
+            type: A
+          - name: mailservera 
+            ip: 127.4.52.5
+            type: A
+          - name: mailserverb 
+            ip: 127.4.62.5
+            type: A
 
   roles:
     - role: ansible_bind
