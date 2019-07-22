@@ -15,13 +15,13 @@
           - name: servera
             ip: 127.2.2.5
             type: A
-          - name: serverb 
+          - name: serverb
             ip: 127.4.2.5
             type: A
-          - name: mailservera 
+          - name: mailservera
             ip: 127.4.52.5
             type: A
-          - name: mailserverb 
+          - name: mailserverb
             ip: 127.4.62.5
             type: A
 
