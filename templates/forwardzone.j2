@@ -1,0 +1,14 @@
+;
+; BIND data file for {{ item.domain_name }}
+;
+$TTL	{{ item.zone_ttl | default(bind_zone_ttl }}
+@	IN	SOA	localhost. root.localhost. (
+			      1		; Serial
+			{{ item.zone_refresh | default(bind_zone_refresh }}	; Refresh
+			{{ item.zone_retry | default(bind_zone_retry }}	; Retry
+			{{ item.zone_ttl | default(bind_zone_expire }}	; Expire
+			{{ item.zone_minttl | default(bind_zone_minttl }} )	; Negative Cache TTL
+;
+@	IN	NS	localhost.
+@	IN	A	127.0.0.1
+@	IN	AAAA	::1

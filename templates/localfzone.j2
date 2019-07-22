@@ -1,0 +1,4 @@
+	zone "{{ item.domain_name }}" {
+		type master;
+		file "/etc/bind/db.{{ item.domain_name }}";
+	};

@@ -3,3 +3,8 @@ bind_enable_caching: true
 bind_forwarders:
   - 8.8.8.8
   - 8.8.4.4
+bind_zone_refresh: 28800
+bind_zone_retry: 7200
+bind_zone_expire: 864000
+bind_zone_ttl: 86400
+bind_zone_minttl: 86400

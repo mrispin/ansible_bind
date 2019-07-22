@@ -1,0 +1,19 @@
+---
+- name: Converge
+  hosts: all
+
+  vars:
+    bind_forward_zones:
+      - domain_name: bind.test
+        admin_email: root.bind.test
+        zone_refresh: 28800
+        zone_retry: 7200
+        zone_expire: 864000
+        zone_ttl: 86400
+
+  roles:
+    - role: ansible_bind
+  tasks:
+    - name: Resolve locally
+      shell: "echo nameserver: 127.0.0.1 >/etc/resolv.conf"
+      changed_when: no
