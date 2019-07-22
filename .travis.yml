@@ -5,15 +5,26 @@ env:
   global:
     - ROLE_NAME: bind
   matrix:
-    # Distros
     - MOLECULE_DISTRO: ubuntu1804
+      MOLECULE_SCENARIO: default
     - MOLECULE_DISTRO: ubuntu1604
+      MOLECULE_SCENARIO: default
     - MOLECULE_DISTRO: ubuntu1404
+      MOLECULE_SCENARIO: default
     - MOLECULE_DISTRO: debian10
+      MOLECULE_SCENARIO: default
     - MOLECULE_DISTRO: debian9
-    # Scenarios
-    - MOLECULE_SCENARIO: default
-    - MOLECULE_SCENARIO: primarymaster
+      MOLECULE_SCENARIO: default
+    - MOLECULE_DISTRO: ubuntu1804
+      MOLECULE_SCENARIO: primarymaster
+    - MOLECULE_DISTRO: ubuntu1604
+      MOLECULE_SCENARIO: primarymaster
+    - MOLECULE_DISTRO: ubuntu1404
+      MOLECULE_SCENARIO: primarymaster
+    - MOLECULE_DISTRO: debian10
+      MOLECULE_SCENARIO: primarymaster
+    - MOLECULE_DISTRO: debian9
+      MOLECULE_SCENARIO: primarymaster
 
 install:
   - pip install testinfra==3.0.4 molecule docker
